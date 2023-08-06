@@ -1,0 +1,10 @@
+FROM golang:latest
+
+WORKDIR /server/migrate
+
+COPY . .
+
+RUN go build -o migrate .
+RUN chmod +x migrate
+
+CMD ["./migrate", "migrate"]

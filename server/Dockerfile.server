@@ -1,0 +1,11 @@
+FROM golang:latest
+
+WORKDIR /server
+
+COPY . .
+
+RUN go build -o server .
+
+EXPOSE 8000
+
+CMD ["./server"]

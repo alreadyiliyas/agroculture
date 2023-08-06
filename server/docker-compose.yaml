@@ -1,0 +1,30 @@
+version: '3.5'
+services:
+  my-golang-server:
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    ports:
+      - "8000:8000"
+    environment:
+      - DBHost=db
+      - DBUserName=postgres
+      - DBUserPassword=2003
+      - DBName=drones
+      - DBPort=5432
+    depends_on:
+      - db
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=2003
+      - POSTGRES_DB=drones
+    ports:
+      - "5432:5432"
+  migrate:
+    build:
+      context: .
+      dockerfile: Dockerfile.migrate
+    depends_on:
+      - db

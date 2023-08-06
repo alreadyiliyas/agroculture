@@ -1,0 +1,8 @@
+export const HOME_ROUTE = '/'
+export const LOGIN_ROUTE = '/login'
+export const REGISTER_ROUTE = '/registration'
+export const USER_ROUTE = '/user'
+export const ADMIN_ROUTE = '/admin'
+export const BASKET_ROUTE = '/basket'
+export const DRONE_ROUTE = '/drone'
+export const UPDATEPASSWORD_ROUTE = '/reset'
